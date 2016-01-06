@@ -30,14 +30,12 @@ class owncloud::install {
         }
 
         apt::source { 'owncloud':
-          location => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_${::operatingsystemrelease}/",
-          release  => ' ',
-          repos    => '/',
-          key      => {
-            id     => 'F9EA4996747310AE79474F44977C43A8BA684223',
-            source => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_${::operatingsystemrelease}/Release.key",
-          },
-          before   => Package[$::owncloud::package_name],
+          location   => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_${::operatingsystemrelease}/",
+          release    => ' ',
+          repos      => '/',
+          key        => 'BA684223',
+          key_source => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_${::operatingsystemrelease}/Release.key",
+          before     => Package[$::owncloud::package_name],
         }
       }
       'CentOS': {
