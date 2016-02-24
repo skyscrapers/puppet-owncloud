@@ -33,7 +33,7 @@ class owncloud::install {
           location   => "http://download.owncloud.org/download/repositories/stable/xUbuntu_${::operatingsystemrelease}/",
           release    => ' ',
           repos      => '/',
-          key        => 'BA684223',
+          key        => '5180350A',
           key_source => "https://download.owncloud.org/download/repositories/stable/xUbuntu_${::operatingsystemrelease}/Release.key",
           before     => Package[$::owncloud::package_name],
         }
