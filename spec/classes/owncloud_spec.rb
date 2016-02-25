@@ -114,9 +114,8 @@ describe 'owncloud' do
 
                 is_expected.to contain_apt__source('owncloud').with(
                   location: "http://download.owncloud.org/download/repositories/stable/xUbuntu_#{facts[:operatingsystemrelease]}/",
-                  key: {
-                    'id' => '5180350A',
-                    'source' => "https://download.owncloud.org/download/repositories/stable/xUbuntu_#{facts[:operatingsystemrelease]}/Release.key"
+                  key: '5180350A',
+                  key_source: "https://download.owncloud.org/download/repositories/stable/xUbuntu_#{facts[:operatingsystemrelease]}/Release.key"
                   },
                   release: ' ',
                   repos: '/'
