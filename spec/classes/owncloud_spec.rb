@@ -113,11 +113,9 @@ describe 'owncloud' do
                 end
 
                 is_expected.to contain_apt__source('owncloud').with(
-                  location: "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_#{facts[:operatingsystemrelease]}/",
-                  key: {
-                    'id' => 'F9EA4996747310AE79474F44977C43A8BA684223',
-                    'source' => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_#{facts[:operatingsystemrelease]}/Release.key"
-                  },
+                  location: "http://download.owncloud.org/download/repositories/stable/xUbuntu_#{facts[:operatingsystemrelease]}/",
+                  key: '5180350A',
+                  key_source: "https://download.owncloud.org/download/repositories/stable/xUbuntu_#{facts[:operatingsystemrelease]}/Release.key",
                   release: ' ',
                   repos: '/'
                 ).that_comes_before('Package[owncloud-server]')

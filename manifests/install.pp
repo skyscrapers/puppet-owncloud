@@ -30,11 +30,11 @@ class owncloud::install {
         }
 
         apt::source { 'owncloud':
-          location   => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_${::operatingsystemrelease}/",
+          location   => "http://download.owncloud.org/download/repositories/stable/xUbuntu_${::operatingsystemrelease}/",
           release    => ' ',
           repos      => '/',
-          key        => 'BA684223',
-          key_source => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_${::operatingsystemrelease}/Release.key",
+          key        => '5180350A',
+          key_source => "https://download.owncloud.org/download/repositories/stable/xUbuntu_${::operatingsystemrelease}/Release.key",
           before     => Package[$::owncloud::package_name],
         }
       }
